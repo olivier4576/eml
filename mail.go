@@ -16,7 +16,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/sg3des/eml/decoder"
+	"github.com/vjeantet/eml/decoder"
 )
 
 var benc = base64.URLEncoding
