@@ -5,6 +5,7 @@ package eml
 import (
 	"errors"
 	"fmt"
+	"github.com/vjeantet/eml/decoder"
 	"strings"
 )
 
@@ -122,6 +123,9 @@ func parseMailboxAddr(ts []token) (ma MailboxAddr, err error) {
 			ma.name += string(nt) + " "
 		}
 		ma.name = strings.TrimSpace(ma.name)
+		if tmp, err := decoder.Parse([]byte(ma.name)); err == nil {
+			ma.name = string(tmp)
+		}
 		ma.local, ma.domain, err = parseSimpleAddr(ats[:len(ats)-1])
 		return
 	}
