@@ -10,7 +10,7 @@ import (
 	"mime/quotedprintable"
 
 	"github.com/paulrosania/go-charset/charset"
-	_ "github.com/paulrosania/go-charset/charset/data"
+	_ "github.com/paulrosania/go-charset/data"
 )
 
 func UTF8(cs string, data []byte) ([]byte, error) {
